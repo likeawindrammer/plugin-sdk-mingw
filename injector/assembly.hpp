@@ -26,14 +26,16 @@
 #pragma once
 
 // This header is very restrict about compiler and architecture
-#ifndef _MSC_VER    // MSVC is much more flexible when we're talking about inline assembly
+/*#ifndef _MSC_VER    // MSVC is much more flexible when we're talking about inline assembly
 #error  Cannot use this header in another compiler other than MSVC
 #endif
 #ifndef _M_IX86
 #error  Supported only in x86
-#endif
+#endif*/
 
 //
+#include <utility>
+#include <memory>
 #include "injector.hpp"
 
 namespace injector
@@ -97,7 +99,7 @@ namespace injector
         template<class W>   // where W is of type wrapper
         inline void __declspec(naked) make_reg_pack_and_call()
         {
-            _asm
+            /*_asm
             {
                 // Construct the reg_pack structure on the stack
                 pushad              // Pushes general purposes registers to reg_pack
@@ -116,7 +118,7 @@ namespace injector
 
                 // Back to normal flow
                 ret
-            }
+            }*/
         }
     };
 

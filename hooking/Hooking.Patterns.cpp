@@ -228,7 +228,7 @@ void basic_pattern_impl::EnsureMatches(uint32_t maxCount)
 		}
 	}
 
-	__try
+    /*__try*/
 	{
 		for (uintptr_t i = executable.begin(), end = executable.end() - maskSize; i <= end;)
 		{
@@ -250,9 +250,9 @@ void basic_pattern_impl::EnsureMatches(uint32_t maxCount)
 			else i += std::max(ptrdiff_t(1), j - Last[ptr[j]]);
 		}
 	}
-	__except ((GetExceptionCode() == EXCEPTION_ACCESS_VIOLATION) ? EXCEPTION_EXECUTE_HANDLER : EXCEPTION_CONTINUE_SEARCH)
+    /*__except ((GetExceptionCode() == EXCEPTION_ACCESS_VIOLATION) ? EXCEPTION_EXECUTE_HANDLER : EXCEPTION_CONTINUE_SEARCH)
 	{
-	}
+    }*/
 
 	m_matched = true;
 }
