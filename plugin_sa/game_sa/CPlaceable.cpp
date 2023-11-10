@@ -8,17 +8,23 @@
 
 CVector CPlaceable::GetRightDirection()
 {
-	return ((CVector (__thiscall *)(CPlaceable *))0x41CC70)(this);
+    CVector result;
+    ((void(__thiscall *)(CPlaceable *, float *))0x41CC70)(this, &result.x);
+    return result;
 }
 
 CVector CPlaceable::GetTopDirection()
 {
-	return ((CVector (__thiscall *)(CPlaceable *))0x41CCB0)(this);
+    CVector result;
+    ((void(__thiscall *)(CPlaceable *, float *))0x41CCB0)(this, &result.x);
+    return result;
 }
 
 CVector CPlaceable::GetAtDirection()
 {
-	return ((CVector (__thiscall *)(CPlaceable *))0x50E420)(this);
+    CVector result;
+    ((void(__thiscall *)(CPlaceable *, float *))0x50E420)(this, &result.x);
+    return result;
 }
 
 void CPlaceable::SetPosn(float x, float y, float z)
