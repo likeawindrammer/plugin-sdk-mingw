@@ -6,7 +6,6 @@
 */
 #pragma once
 #include "PluginBase.h"
-#include "CKeyboardMgr.h"
 
 enum eGamePadButtons {
     BUTTON_LEFT_STICK_X,
@@ -76,11 +75,6 @@ public:
     uint8_t field_8;
 
 public:
-    static CKeyboardMgr& KeyboardMgr;
-    static float& MousePosX;
-    static float& MousePosY;
-    static int32_t* NewMouseControllerState;
-    static int32_t* OldMouseControllerState;
     static int32_t& CurrentPad;
 
 public:

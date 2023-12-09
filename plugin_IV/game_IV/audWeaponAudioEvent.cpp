@@ -6,4 +6,4 @@
 */
 #include "audWeaponAudioEvent.h"
 
-audWeaponAudioEntity& WeaponAudioEntity = *gpatternt(audWeaponAudioEntity, "B9 ? ? ? ? 6A 00 50 56 8D 84 24", 1);
+audWeaponAudioEntity& g_WeaponAudioEntity = *gpatternt(audWeaponAudioEntity, "B9 ? ? ? ? 6A 00 50 56 8D 84 24", 1);

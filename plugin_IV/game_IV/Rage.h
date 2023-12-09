@@ -8,6 +8,8 @@
 #include "PluginBase.h"
 
 // Audio
+#include "rage/audController.h"
+#include "rage/audSoundInitParams.h"
 #include "rage/audEntity.h"
 
 // Render
@@ -30,6 +32,10 @@
 // Misc
 #include "rage/pgRef.h"
 #include "rage/pgDictionary.h"
+#include "rage/ioValue.h"
+#include "rage/ioMapper.h"
+#include "rage/ioMouse.h"
+#include "rage/ioKeyboard.h"
 
 // Physics
 #include "rage/phConstrainedCollider.h"

@@ -14,10 +14,13 @@
 #include "CObject.h" 
 #include "CAmmoData.h"
 #include "CWeaponData.h"
+#include "CControl.h"
 
-enum ePedState {
-    PEDSTATE_DIE = 1,
-    PEDSTATE_DEAD = 2,
+enum eDeathState : int32_t {
+    DeathState_Alive = 0x0,
+    DeathState_Dying = 0x1,
+    DeathState_Dead = 0x2,
+    DeathState_Max = 0x3,
 };
 
 enum eRagdollState {
@@ -433,7 +436,7 @@ public:
     uint8_t field_338[10];
     uint8_t m_bHasBeenArrested;
     uint32_t field_350;
-    int32_t m_nPedState;
+    eDeathState m_nDeathState;
     int32_t m_nLastDamageBone;
     uint8_t field_360[6];
     float m_fMaxHealth;
@@ -478,6 +481,7 @@ public:
     void RemoveHelmet(bool arg1);
     bool CanStartMission();
     void SetRelationship(int32_t level, int32_t group);
+    CControl* GetControlFromPlayer();
 
 public:
     static CVehicle* GetVehiclePedWouldEnter(CPed* ped, rage::Vector3 const& pos, bool arg2);
